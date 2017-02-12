@@ -1,0 +1,49 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	background-size: cover;
+	height: 100%;
+	font-family: lob;
+	width: 100%;
+	background-image: url(untitled.png);
+	color: white;
+	padding-bottom: 50px;
+}
+a:visited, a:link, a:active{
+	color: white;
+}
+a:hover{
+	color: gray;
+}
+pre{
+	font-size: 15px;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style-type: none;
+}
+h1{
+	text-align: center;
+	padding-top: 20px;
+	font-size: 50px;
+}
+p{
+	text-align: right;
+	padding-right: 60px;
+	font-size: 20px;
+}
+div{
+	padding-left: 100px;
+}
+li{
+	font-size: 20px;
+}
+img{
+	width: 85%;
+}
+@font-face {
+     font-family: lob;
+     src: url(Lobster.ttf);
+}
