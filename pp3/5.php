@@ -15,20 +15,82 @@
 		<pre>
 			#include&lt;iostream>
 			using namespace std;
-			main(){
-			    int n, m, i, a[20], b[20], p=0;
-			    cin>>n;
-			    for(i=0; i&lt;n; i++)
-			        cin>>a[i];
-			    cin>>m;
-			    for(i=0; i&lt;m; i++)
-			        cin>>b[i];
-			    for(i=0; i&lt;n; i++){
-			        cout&lt;&lt;a[i]+b[i]&lt;&lt;endl;
-			        p+=a[i]*b[i];
-			    }
-			    cout&lt;&lt;p;
+			class vector
+			{
+			    int num;
+			    int *ele;
+			    public:
+			    vector();
+			    vector(int);
+			    vector(vector&);
+			    vector sum (vector&);
+			    int product(vector&);
+			    void get();
+			    void print();
+			};
+
+			
+			//start
+			#include&lt;stdlib.h>
+			vector::vector(){
+			    num=0;
 			}
+			vector::vector(int a){
+			    num=a;
+			}
+			vector::vector(vector &a){
+			    num=a.num;
+			    ele=a.ele;
+			}
+			void vector::get(){
+			    int i, *ptr;
+			    cin>>num;
+			    ptr=(int*)calloc(num,sizeof(int));
+			    ele=ptr;
+			    for(i=0; i&lt;num; i++,ptr++)
+			    cin>>*ptr;
+
+			}
+			vector vector::sum(vector& a){
+			    vector b;
+			    int i, *ptr1, *ptr, *ptr2;
+			    ptr=(int*)calloc(num, sizeof(int));
+			    b.num=num;
+			    b.ele=ptr;
+			    ptr1=ele;
+			    ptr2=a.ele;
+			    for(i=0; i&lt;num; i++, ptr1++, ptr2++, ptr++)
+			    *ptr=*ptr2+*ptr1;
+			    return b;
+			}
+			void vector::print(){
+			    int i;
+			    for(i=0; i&lt;num; i++, ele++)
+			    cout&lt;&lt;*ele&lt;&lt;endl;
+			}
+			int vector::product(vector& a){
+			    int p=0, i, *ptr1, *ptr2;
+			    ptr1=ele;
+			    ptr2=a.ele;
+			    for(i=0; i&lt;num; i++, ptr1++, ptr2++)
+			    p+=(*ptr1)*(*ptr2);
+			    return p;
+			}
+			//end
+
+
+			int main()
+			{
+			    vector v1, v2,v3;
+			    int dot_Pdt;
+			    v1.get();
+			    v2.get();
+			    v3 = v1.sum(v2);
+			    v3.print();
+			    dot_Pdt = v1.product(v2);
+			    cout&lt;&lt;dot_Pdt;
+			}
+
 
 	</pre>
 	</div>
