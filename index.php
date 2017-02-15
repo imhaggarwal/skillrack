@@ -6,9 +6,9 @@
 </head>
 <body>
 	<h1>Cracking Skillrack</h1>
+	<p style="text-align: center;">Just like 'everyone', our solutions are NOT copied</p>
 	<p>Powered by Doctor Codes</p>
 	<div>
-
 <?php include './adCode.php'; ?>
 	<h2><a href="copy/copy.php">Copy-Paste Decoded</a></h2>
 	<h2>Inlab Session 1</h2>
@@ -58,7 +58,7 @@
 	</div>
 	<br>
 	<span style="margin-left: 30px">More to follow...</span>
-	<p>Follow us at:<br><br><a href="//www.facebook.com/doctorcodes/">Facebook.com/DoctorCodes</a><br><a href="//www.youtube.com/doctorcodes">Youtube.com/DoctorCodes</p>
+	<p>Follow us at:<br><br><a href="http://www.facebook.com/doctorcodes/">Facebook.com/DoctorCodes</a><br><a href="http://www.youtube.com/doctorcodes">Youtube.com/DoctorCodes</p>
 <?php include './adCode.php'; ?>
 </body>
 </html>
