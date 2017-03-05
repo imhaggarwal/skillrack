@@ -27,7 +27,19 @@
 		<ul>
 			<li><a href="in4.php"> Terms in an Arithmetic Progression</a></li><br>
 		</ul>
+	<h2>Inlab Session 5</h2>
+		<ul>
+			<li><a href="in5.php">Electronics Store Problem</a></li><br>
+		</ul>
 <?php include './adCode.php'; ?>
+		<h2>CSE 1002 PPS4 new Winter ' 16 </h2>
+		<ul>
+			<li><a href="pp4/1.php">Boarding Pass</a></li><br>
+			<li><a href="pp4/2.php">Automatic vending machine</a></li><br>
+			<li><a href="pp4/3.php">Vector operations</a></li><br>
+			<li><a href="pp4/4.php">Sort a Given Set of Points</a></li><br>
+			<li><a href="pp4/5.php">String operations</a></li><br>
+		</ul>
 		<h2>CSE 1002 PPS3 new Winter ' 16 </h2>
 		<ul>
 			<li><a href="pp3/1.php">Tender scrutiny using reference variableAutomatic vending machine</a></li><br>
@@ -35,7 +47,6 @@
 			<li><a href="pp3/3.php">Snakes and Ladders</a></li><br>
 			<li><a href="pp3/4.php">Chess, Carrom and Scrabble Players</a></li><br>
 			<li><a href="pp3/5.php">Vector Operations</a></li><br>
-</a></li>
 		</ul>
 		<h2>CSE 1002 PPS2 new Winter ' 16 </h2>
 		<ul>
@@ -44,7 +55,6 @@
 			<li><a href="pp2/3.php">Identify machines in same local network</a></li><br>
 			<li><a href="pp2/4.php">Row Maximum of a Matrix</a></li><br>
 			<li><a href="pp2/5.php">Salary of Employees</a></li><br>
-</a></li>
 		</ul>
 		<br>
 		<h2>CSE 1002 PPS1 new Winter ' 16 </h2>
