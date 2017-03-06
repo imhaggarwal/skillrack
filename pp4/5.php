@@ -42,11 +42,8 @@
 			    stringops nest;
 			    for(i=0; n>0; i++)
 			    nest.str[i]=str[--n];
-			    for(;i&lt;l;i++){
-			        cout&lt;&lt;str[i]&lt;&lt;":";
+			    for(;i&lt;l;i++)
 			        nest.str[i]=str[i];
-			        cout&lt;&lt;nest.str&lt;&lt;endl;
-			    }
 			    nest.str[i]='\0';
 			    return nest;
 			}
