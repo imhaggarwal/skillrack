@@ -35,7 +35,7 @@
 		<h2>CSE 1002 PPS4 new Winter ' 16 </h2>
 		<ul>
 			<li><a href="pp4/1.php">Boarding Pass</a></li><br>
-			<li><a href="pp4/2.php">Automatic vending machine</a></li><br>
+			<li><a href="pp4/2.php">Computing Area of Different Shapes</a></li><br>
 			<li><a href="pp4/3.php">Vector operations</a></li><br>
 			<li><a href="pp4/4.php">Sort a Given Set of Points</a></li><br>
 			<li><a href="pp4/5.php">String operations</a></li><br>
