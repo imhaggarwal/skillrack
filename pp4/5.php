@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-	<h1>Cracking Skillrack</h1>
+	<h1><a href='../index.php'>Cracking Skillrack</a></h1>
 	<p>Powered by Doctor Codes</p>
 	<div>
 <?php include '../adCode.php'; ?>
