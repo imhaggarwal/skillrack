@@ -38,7 +38,7 @@
 			    in>>v.ele[i];
 			}
 			int vector::operator[](int i){
-			    return ele[i];
+			    return ele[i-1];
 			}
 			vector vector::operator +(vector &v){
 			    vector newv;
