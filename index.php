@@ -31,7 +31,19 @@
 		<ul>
 			<li><a href="in5.php">Electronics Store Problem</a></li><br>
 		</ul>
+	<h2>Inlab Session 6</h2>
+		<ul>
+			<li><a href="in6.php"> Overload Polynomial</a></li><br>
+		</ul>
 <?php include './adCode.php'; ?>
+		/*<h2>CSE 1002 PPS5 new Winter ' 16 </h2>
+		<ul>
+			<li><a href="pp5/1.php">College Pass</a></li><br>
+			<li><a href="pp5/2.php">Black Coin in Board game</a></li><br>
+			<li><a href="pp5/3.php">Cost of Pizza</a></li><br>
+			<li><a href="pp5/4.php">Customer discount</a></li><br>
+			<li><a href="pp5/5.php">Polygon in a Two Dimensional Space</a></li><br>
+		</ul>*/
 		<h2>CSE 1002 PPS4 new Winter ' 16 </h2>
 		<ul>
 			<li><a href="pp4/1.php">Boarding Pass</a></li><br>
