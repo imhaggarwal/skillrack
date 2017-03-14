@@ -9,67 +9,134 @@
 	<p>Powered by Doctor Codes</p>
 	<div>
 <?php include '../adCode.php'; ?>
-		<h2>Vector operations</h2>
-		<div>Design a class vector to perform the operations like retrieving value for i-th component from a vector, add two vectors and subtract a vector from another if they are of same dimension. A vector of n-dimension is represented by an n-tuple (a sequence of n numbers). Addition of two vectors of same dimension,  is got by adding   the corresponding components of the two vectors. Similarly, subtraction of the two vectors, v1-v2,  is got by the subtracting the respective components of v2 from the corresponding components of v1. Overload subscript ([]) operator for retrieving the i-th element from a vector, '+' and '-' for addition and subtraction, &lt;&lt; and >> for I/O operations. If the vectors are of different dimension, throw an exception stating "Vectors of different dimension cannot be added".</div>
+		<h2> Cost of Pizza</h2>
+		<div>Pizza is a delicious circular food item that is a favorite for many people. Given the radius of the pizza, ingredients required for the preparation of the pizza, per square cm (cm2) area of the pizza and cost of its ingredients per 100 grams, design an OOP model and write a C++ program to calculate the cost of the pizza. Add Rs 50 for veg pizza and Rs 100 for chicken pizza. Use 3.14 for pi. Your program should  get all the ingredients available in the kitchen with their cost per 100 grams, as an input.  Assume that all the ingredients required for the preparation of the pizza is available in the kitchen.</div>
 		<br><br>
 		<pre>
 			#include&lt;iostream>
 			using namespace std;
-			class vector
+			#include&lt;string.h>
+			#include&lt;iomanip>
+			class circle
 			{
-			    int num;
-			    int ele[20];
-			    public:
-			    friend istream& operator>>(istream&,vector&);
-			    friend ostream& operator&lt;&lt;(ostream&,vector&);
-			    vector operator+(vector&);
-			    vector operator-(vector&);
-			    int operator[](int);
+			    protected:
+			    float radius;
+			    public:
+			    void get_C();
+			    void print_C();
+			    float area();
 			};
+			struct ingre_Cost
+			{
+			    char name[30];
+			    float price;
+			};
+			class kitchen
+			{
+			    protected:
+			    int num1;
+			    //ingredients in the kitchen and their cost
+			    ingre_Cost ing_Cost[20];
+			    public:
+			    void get_K();
+			    void print_K();
+			    //Given name of ingredients
+			    //return cost of 100gm of it
+			    float get_Cost(char*);
+			};
+			struct ingre_Qty
+			{
+			    char name[30];
+			    float qty;
+			};
+			class cookeditem
+			{
+			    protected:
+			    //number of ingredients
+			    int num;
+			    // names of ingredients and their quantity in
+			    // Pizza
+			    ingre_Qty ing_Qty[20];
+			    public:
+			    void get_CI();
+			    void print_CI();
+			};
+			 
+			//Create a class pizza that inherits circle and cookeditem
+			//Create another class veg_Pizza inherited that inherits pizza
+			//Create another class chik_Pizza inherited that inherits pizza
 
 			//start
-			ostream& operator&lt;&lt;(ostream& out,vector& v){
-			    for(int i=0; i&lt;v.num; i++)
-			    out&lt;&lt;v.ele[i]&lt;&lt;endl;
+			float kitchen::get_Cost(char na[]){
+			    for(int i=0; i&lt;num1; i++)
+			    if(!strcmp(ing_Cost[i].name,na))
+			    return ing_Cost[i].price;
 			}
-			istream& operator >>(istream& in, vector &v){
-			    in>>v.num;
-			    for(int i=0; i&lt;v.num; i++)
-			    in>>v.ele[i];
+			class pizza : public circle, public cookeditem{
+			    float ar;
+			    int i;
+			    public:
+			    float fin;
+			    void get_P(){
+			        cin>>radius>>num;
+			        for(i=0; i&lt;num; i++)
+			        cin>>ing_Qty[i].name>>ing_Qty[i].qty;
+			        ar=3.14*radius*radius;
+			    }
+			    void compute_Cost(kitchen k){
+			        fin=50;
+			        for(i=0; i&lt;num; i++)
+			            fin+=k.get_Cost(ing_Qty[i].name)*(ing_Qty[i].qty)*ar/100;
+			    }
+			    virtual void print_P(){
+			        cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;fin;
+			    }
+			};
+			void kitchen::get_K(){
+			    cin>>num1;
+			    for(int i=0; i&lt;num1; i++)
+			    cin>>ing_Cost[i].name>>ing_Cost[i].price;
 			}
-			int vector::operator[](int i){
-			    return ele[i];
-			}
-			vector vector::operator +(vector &v){
-			    vector newv;
-			    newv.num=num;
-			    for(int  i=0; i&lt;num; i++)
-			    newv.ele[i]=ele[i]+v.ele[i];
-			    return newv;
-			}
-			vector vector::operator -(vector &v){
-			    vector newv;
-			    newv.num=num;
-			    for(int  i=0; i&lt;num; i++)
-			    newv.ele[i]=ele[i]-v.ele[i];
-			    return newv;
-			}
+			class veg_Pizza : public pizza{
+			};
+			class chik_Pizza : public veg_Pizza{
+			    public:
+			    void print_P(){
+			        cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;fin+50;
+			    }
+			};
 			//end
 
 			int main()
 			{
-			    vector v1,v2,v3;
-			    int i,j;
-			    cin>>v1;
-			    cin>>v2;
-			    cin>>i;
-			    cin>>j;
-			    cout&lt;&lt;v1[i]&lt;&lt;endl;
-			    cout&lt;&lt;v2[j]&lt;&lt;endl;
-			    v3 = v1+v2;
-			    cout&lt;&lt;v3;
-			    v3 = v1 - v2;
-			    cout&lt;&lt;v3;
+			    int ch;
+			    cin>>ch;
+			    if (ch==0)
+			    {
+			    //Create an oject for veg pizza
+			    veg_Pizza p;
+			    //get radius of circle(pizza)
+			    // get ingredients and quantity required for 1 square centimeter
+			    p.get_P();
+			    //get items in kitchen and their cost
+			    kitchen k;
+			    k.get_K();
+			    //compute cost
+			    p.compute_Cost(k);
+			    p.print_P();
+			    }
+			    else
+			    {
+			    if (ch==1)
+			    {
+			    chik_Pizza c;
+			    c.get_P();
+			    kitchen k1;
+			    k1.get_K();
+			    c.compute_Cost(k1);
+			    c.print_P();
+			    }
+			    }
 			}
 		</pre>
 	</div>
