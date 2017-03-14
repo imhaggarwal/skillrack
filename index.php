@@ -3,6 +3,7 @@
 <head>
 	<title>Cracking Skillrack</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="utf-8" />
 </head>
 <body>
 	<h1>Cracking Skillrack</h1>
@@ -42,7 +43,7 @@
 			<li><a href="pp5/2.php">Black Coin in Board game</a></li><br>
 			<li><a href="pp5/3.php">Cost of Pizza</a></li><br>
 			<li><a href="pp5/4.php">Customer discount</a></li><br>
-			//<li><a href="pp5/5.php">Polygon in a Two Dimensional Space</a></li><br>
+			<li><a href="pp5/5.php">Polygon in a Two Dimensional Space</a></li><br>
 		</ul>
 		<h2>CSE 1002 PPS4 new Winter ' 16 </h2>
 		<ul>

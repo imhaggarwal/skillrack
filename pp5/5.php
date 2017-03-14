@@ -11,121 +11,108 @@
 	<div>
 <?php include '../adCode.php'; ?>
 		<h2>S Polygon in a Two Dimensional Space </h2>
-		<div>Design a class stringpos to perform the operations like retrieving the letter  in the i-th position (i-th symbol) of  a string, rotation of a string,  oddfirst  of a string, evenfirst of a  string, spin of two strings,  oddevenswap of two strings, evenoddswap of two strings.  Here the terms : rotation, oddfirst, evenfirst, are the operations performed on one string. The terms : spin, oddevenswap, evenoddswap are the operations performed on two strings.  With the string S and integer n&lt;length of the string, rotation(S,n) is the string  S1 such that the the letter in the n-th position of S is the letter in the first position of S1, the letter in the (n-1)-th position of S is the second letter in S1, ... the letter in the k-th  position is the (n-k+1)-th letter in S1 and so on. In the operation, rotation(S,n), ‘n’ is called the rotation index.  rotation(abcd,4) = dcba and rotation(abcd,2) = bacd.  oddfirst of a string S is got by placing all the letters occurring in the odd positions of S sequentially  and then placing all the letters occurring in the even positions of S, sequentially.  That is, oddfirst(abcd) is acbd. Similarly,  evenfirst of a string S is got by placing all the letters occurring in the even positions of S sequentially and then placing all the letters occurring in the odd positions of S, sequentially. That is, evenfirst(abcd) is bdac. Spin of two strings S1 and S2 is got by placing the first letter of S2 between the first and the second letter  of S1, placing the second letter  of S2 between the second and the third letter of S1 and so on.  That is, k-th letter of S2 will be placed between the k-th letter and the (k+1)-th letter  of S1.  If there are no k-th , (k+1)-th letters  in S1 to place the k-th letter of S2, then, the k-th symbol is just placed at the end of the string so far formed. For example, Spin(abcd, efgh)= aebfcgdh, Spin(ab, efgh) = aebfgh, Spin(abcd,ef)= aebfcd. Spin(S1, S2) need not be the same as that of Spin(S2, S1).<br> <br> Oddevenswap(S1,S2) produces a string such that the  letters occurring in the odd positions  of S1 are  replaced by the letters occurring in the corresponding even positions of S2 and the letters occurring in the even position of S1 are left unchanged. In the above example, after a certain stage,  If there are no even-position letters in S2 to replace the odd-position letters in S1, those odd-position letters are left unreplaced.  For Example, oddevenswap(abcd, efgh)= fbhd, oddevenswap(ab,efgh)=fb, oddevenswap(abcd,fg)= gbcd.  Here also, oddevenswap(S1, S2) need not be same as that of oddevenswap(S2,S1). <br><br>Similarly, evenoddwap(S1,S2) produces a string such that the  letters occurring in the even  positions  of S1 are  replaced by the letters occurring in the corresponding odd  positions of S2 and the letters occurring in the odd  position of S1 are left unchanged.  For Example, evenoddswap(abcd, efgh)= aecg, evenoddswap(ab,efgh)=ae, evenoddswap(abcd,fg)= afcd  Here also, evenoddswap(S1, S2) need not be same as that of evenoddswap(S2,S1).<br><br>Overload shift left operator for rotation, prefix ++ for oddfirst, postfix ++ for evenfirst, '*' for spin,'+' operator for Oddevenswap, '-' operator for Evenoddswap, << and >> for I/O operations.</div>
+		<div>Design a class polygon to represent a polygon in a two dimensional space. Provide member functions to get the details of the polygon and compute area.Here the vertices are numbered from 1 to n either clockwise or anticlockwise. The sign of the value changes when numbering is done in the other way. So absolute value is considered.<br>Derive two classes: triangle and quadrilateral, from the class polygon. Overload the operator [] to get the 'i-th' point of the polygon if 'i' is less than or equal to the number of vertices 'n' and raise an user defined exception outofrange when 'i' is greater than 'n'. Catch the exception in main and print 'outofrange'.</div>
 		<br><br>
 		<pre>
 			#include&lt;iostream>
-			#include&lt;string.h>
 			using namespace std;
-			class stringops
+			#include&lt;math.h>
+			#include&lt;iomanip>
+			#include&lt;exception>
+			//Declaration of classes
+			struct point
 			{
-			char str[50];
+			double x;
+			double y;
+			point();
+			void get();
+			friend ostream& operator&lt;&lt;(ostream&,point);
+			};
+			class outofrange:public exception
+			{
 			public:
-			    friend istream& operator>>(istream&,stringops&);
-			    friend ostream& operator&lt;&lt;(ostream&,stringops&);
-			    stringops operator>>(int);
-			    stringops operator++();
-			    stringops operator++(int);
-			    stringops operator + (stringops&);
-			    stringops operator - (stringops&);
-			    stringops operator * (stringops&);
+			void what();
+			 
+			};
+			class polygon
+			{
+			protected:
+			int num_Of_Ver;
+			point* vertices;
+			public:
+			//initialize num_Of_Ver to 'n'
+			//allocate memory to store points of 'n' vertices
+			polygon(int n);
+			~polygon();
+			//get function cannot be defined here instead define in the derived class
+			void get();
+			//we return reference of the point so that assignment can be made
+			point& operator[](int idx);
+			double area();
+			};
+			class triangle : public polygon
+			{
+			public:
+			triangle():polygon(3){}
+			};
+			class quadrilateral : public polygon
+			{
+			public:
+			    quadrilateral():polygon(4){}
 			};
 
 			//start
-			istream& operator>>(istream &in, stringops &str){
-			    in>>str.str;
+			point::point(){}
+			ostream& operator&lt;&lt;(ostream& out, point p){
+			    cout&lt;&lt;p.x&lt;&lt;" "&lt;&lt;p.y;
 			}
-			ostream& operator&lt;&lt;(ostream &out, stringops &str){
-			    out&lt;&lt;str.str;
+			polygon::polygon(int n){
+			    num_Of_Ver=n;
+			    vertices=new point[n];
 			}
-			stringops stringops::operator>>(int n){
-			    int i, l=strlen(str);
-			    stringops nest;
-			    for(i=0; n>0; i++)
-			    nest.str[i]=str[--n];
-			    for(;i&lt;l;i++){
-			        cout&lt;&lt;str[i]&lt;&lt;":";
-			        nest.str[i]=str[i];
-			        cout&lt;&lt;nest.str&lt;&lt;endl;
-			    }
-			    nest.str[i]='\0';
-			    return nest;
+			void polygon::get(){
+			    for(int i=0; i&lt;num_Of_Ver; i++)
+			    cin>>vertices[i].x>>vertices[i].y;
 			}
-			stringops stringops::operator++(){
-			    stringops nest;
-			    int i, l=strlen(str), ln=0;
-			    for(i=0; i&lt;l; i+=2)
-			    nest.str[ln++]=str[i];
-			    for(i=1; i&lt;l; i+=2)
-			    nest.str[ln++]=str[i];
-			    nest.str[ln]='\0';
-			    return nest;
+			double polygon::area(){
+			    double a=0;
+			    for(int i=0; i&lt;num_Of_Ver-1; i++)
+			    a+=vertices[i].x*vertices[i+1].y-vertices[i].y*vertices[i+1].x;
+			    a+=vertices[num_Of_Ver-1].x*vertices[0].y-vertices[num_Of_Ver-1].y*vertices[0].x;
+			    return fabs(a/2);
 			}
-			stringops stringops::operator++(int){
-			    stringops nest;
-			    int i, l=strlen(str), ln=0;
-			    for(i=1; i&lt;l; i+=2)
-			    nest.str[ln++]=str[i];
-			    for(i=0; i&lt;l; i+=2)
-			    nest.str[ln++]=str[i];
-			    nest.str[ln]='\0';
-			    return nest;
-			}
-			stringops stringops::operator +(stringops &s2){
-			    stringops nest;
-			    int i;
-			    for(i=0; i&lt;strlen(str); i++)
-			    if(i%2==0 && i&lt;(strlen(s2.str)-1))
-			    nest.str[i]=s2.str[i+1];
+			point& polygon::operator[](int idx){
+			    outofrange o;
+			    if(idx&lt;num_Of_Ver)
+			    return vertices[idx];
 			    else
-			    nest.str[i]=str[i];
-			    nest.str[i]='\0';
-			    return nest;
+			    throw o;
 			}
-			stringops stringops::operator-(stringops &s2){
-			    stringops nest;
-			    int i;
-			    for(i=0; i&lt;strlen(str); i++)
-			    if(i%2!=0 && i&lt;=strlen(s2.str))
-			    nest.str[i]=s2.str[i-1];
-			    else
-			    nest.str[i]=str[i];
-			    nest.str[i]='\0';
-			    return nest;
+			void outofrange::what(){
+			    cout&lt;&lt;"Out of range";
 			}
-			stringops stringops::operator*(stringops &s2){
-			    stringops nest;
-			    int i=0, l1=strlen(str), l2=strlen(s2.str), j=0, ln=0;
-			    while(i&lt;l1 || j&lt;l2){
-			        if(i!=l1)
-			        nest.str[ln++]=str[i++];
-			        if(j!=l2)
-			        nest.str[ln++]=s2.str[j++];
-			    }
-			    nest.str[ln]='\0';
-			    return nest;
-			}
+			polygon::~polygon(){}
 			//end
 
 			
 			int main()
 			{
-			    stringops s1,s2,s3;
-			    int n;
-			    cin>>s1>>s2;
-			    cin>>n;
-			    s3= s1>>n;
-			    cout&lt;&lt;s3&lt;&lt;endl;
-			    s3 = ++s2;
-			    cout&lt;&lt;s3&lt;&lt;endl;
-			    s3 = s1++;
-			    cout&lt;&lt;s3&lt;&lt;endl;
-			    s3 = s1*s2;
-			    cout&lt;&lt;s3&lt;&lt;endl;
-			    s3 = s1+s2;
-			    cout&lt;&lt;s3&lt;&lt;endl;
-			    s3 = s1-s2;
-			    cout&lt;&lt;s3&lt;&lt;endl;
+			    triangle t;
+			    int index;
+			     
+			    t.get();
+			    cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;t.area()&lt;&lt;endl;
+			    quadrilateral r;
+			    r.get();
+			    cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;r.area()&lt;&lt;endl;
+			    cin>>index;
+			    try
+			    {
+			    cout&lt;&lt;r[index];
+			    }catch(outofrange o)
+			    {
+			    o.what();
+			    }
 			}
 		</pre>
 	</div>
