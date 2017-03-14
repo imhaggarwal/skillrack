@@ -3,6 +3,7 @@
 <head>
 	<title>Cracking Skillrack</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<meta charset="utf-8" />
 </head>
 <body>
 	<h1>Cracking Skillrack</h1>
