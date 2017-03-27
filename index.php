@@ -36,6 +36,10 @@
 		<ul>
 			<li><a href="in6.php"> Overload Polynomial</a></li><br>
 		</ul>
+	<h2>Inlab Session 7</h2>
+		<ul>
+			<li><a href="in7.php">Price of books and CD/DVD</a></li><br>
+		</ul>
 <?php include './adCode.php'; ?>
 		<h2>CSE 1002 PPS5 new Winter ' 16 </h2>
 		<ul>
