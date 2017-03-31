@@ -45,6 +45,14 @@
 			<li><a href="in8.php">Almost Complete Binary Tree</a></li><br>
 		</ul>
 <?php include './adCode.php'; ?>
+		<h2>CSE 1002 PPS6 new Winter ' 16 </h2>
+		<ul>
+			<li><a href="pp6/1.php">Grade of a Student</a></li><br>
+			<li><a href="pp6/2.php">Check if a Matrix is Sparse or Not</a></li><br>
+			<li><a href="pp6/3.php">Count the Number of Items</a></li><br>
+			<li><a href="pp6/4.php">Insert into a Generic Box</a></li><br>
+			<li><a href="pp6/5.php">Generic Right Shift</a></li><br>
+		</ul>
 		<h2>CSE 1002 PPS5 new Winter ' 16 </h2>
 		<ul>
 			<li><a href="pp5/1.php">College Pass</a></li><br>
