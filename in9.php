@@ -61,7 +61,7 @@
 			    int d=(*i).dist(mobile_Pt), n=1, p=0;
 			    i++;
 			    for(;i!=tower_Pts.end(); i++, n++)
-			    if(d&lt;(*i).dist(mobile_Pt)){
+			    if(d>(*i).dist(mobile_Pt)){
 			        d=(*i).dist(mobile_Pt);
 			        p=n;
 			    }
