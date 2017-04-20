@@ -54,7 +54,7 @@
 			    else
 			        return false;
 			}
-			template&lt;class T> void AC_BinaryTree::insert(T e){
+			template&lt;class T> void AC_BinaryTree<T>::insert(T e){
 			    if(isFull())
 			        cout&lt;&lt;"Tree full insertion cannot be made"&lt;&lt;endl;
 			    else
