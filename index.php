@@ -49,14 +49,14 @@
 			<li><a href="in9.php">List of points</a></li><br>
 		</ul>
 <?php include './adCode.php'; ?>
-		<!--<h2>CSE 1002 PPS7 new Winter ' 17 </h2>
+		<h2>CSE 1002 PPS7 new Winter ' 17 </h2>
 		<ul>
 			<li><a href="pp7/1.php">Generic Double Ended Queue	</a></li><br>
 			<li><a href="pp7/2.php">Vector of Characters</a></li><br>
 			<li><a href="pp7/3.php">Symmetric Matrix</a></li><br>
 			<li><a href="pp7/4.php">Arrange Items for Solar Vehicle</a></li><br>
 			<li><a href="pp7/5.php">List of even Points</a></li><br>
-		</ul>-->
+		</ul>
 		<h2>CSE 1002 PPS6 new Winter ' 16 </h2>
 		<ul>
 			<li><a href="pp6/1.php">Grade of a Student</a></li><br>
