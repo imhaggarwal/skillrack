@@ -48,7 +48,19 @@
 		<ul>
 			<li><a href="in9.php">List of points</a></li><br>
 		</ul>
+	<h2>Inlab Session 10</h2>
+		<ul>
+			<li><a href="in9.php">Car Mileage Calculation Problem</a></li><br>
+		</ul>
 <?php include './adCode.php'; ?>
+		<h2>CSE 1002 PPS8 new Winter ' 17 </h2>
+		<ul>
+			<li><a href="pp8/1.php">Code Detection Problem</a></li><br>
+			<li><a href="pp8/2.php">Special Pay Increase Problem</a></li><br>
+			<li><a href="pp8/3.php">Count Words in Tweets</a></li><br>
+			<li><a href="pp8/4.php">Sort Data in File</a></li><br>
+			<li><a href="pp8/5.php"> Class Average Problem</a></li><br>
+		</ul>
 		<h2>CSE 1002 PPS7 new Winter ' 17 </h2>
 		<ul>
 			<li><a href="pp7/1.php">Generic Double Ended Queue	</a></li><br>
