@@ -50,7 +50,7 @@
 		</ul>
 	<h2>Inlab Session 10</h2>
 		<ul>
-			<li><a href="in9.php">Car Mileage Calculation Problem</a></li><br>
+			<li><a href="in10.php">Car Mileage Calculation Problem</a></li><br>
 		</ul>
 <?php include './adCode.php'; ?>
 		<h2>CSE 1002 PPS8 new Winter ' 17 </h2>
