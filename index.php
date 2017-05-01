@@ -53,6 +53,14 @@
 			<li><a href="in10.php">Car Mileage Calculation Problem</a></li><br>
 		</ul>
 <?php include './adCode.php'; ?>
+		<h2>CSE 1002 Bonus PP new Winter ' 17 </h2>
+		<ul>
+			<li><a href="pp9/1.php"> Find a Route</a></li><br>
+			<li><a href="pp9/2.php">How to Serve a Coffee?</a></li><br>
+			<li><a href="pp9/3.php">Jobs with and without Priority</a></li><br>
+			<li><a href="pp9/4.php">Names that Do Begin with Vowel- descending order</a></li><br>
+			<li><a href="pp9/5.php">3-D points- multiply and increment</a></li><br>
+		</ul>
 		<h2>CSE 1002 PPS8 new Winter ' 17 </h2>
 		<ul>
 			<li><a href="pp8/1.php">Code Detection Problem</a></li><br>
